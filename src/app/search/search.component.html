@@ -1,0 +1,22 @@
+<!-- Search Section -->
+<div class="search-container">
+    <input type="search" id="search-text-field" placeholder="Which player you are looking for?" [(ngModel)]="playerName">
+    <button (click)="searchPlayer()" id="search-button">Search Player</button>
+</div>
+
+<!-- Search Result Section -->
+<div id="search-results" class="search-result-container">
+    <li *ngFor="let player of playerData">
+        <app-player [playerInfo]="player"></app-player>
+        <button class="recommen"
+            (click)="toogleRecommedation(player)" 
+            [ngClass]="{'recommend':!player.isRecommend , 'unrecommend' : player.isRecommend }">
+            {{player.isRecommend ? "unrecommend" : "recommend"}}
+        </button>
+    </li>
+</div>
+
+<!-- Recommend Players Container -->
+<div class="recommended-players-container">
+    <app-recommendation [recommendedPlayers]="recommendedPlayers"></app-recommendation>
+</div>

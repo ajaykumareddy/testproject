@@ -1,0 +1,8 @@
+<h1 class="recommended-players-title">Recommended Players</h1>
+
+<!-- Recommended Players Section -->
+<div class="recommended-players-container">
+    <li *ngFor="let player of recommendedPlayers">
+        <app-player [playerInfo]="player"></app-player>
+    </li>
+</div>
